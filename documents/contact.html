@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Creative Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <main class="hero page-hero" id="home">
+        <div class="hero-overlay"></div>
+
+        <header class="navbar">
+            <a class="logo" href="index.html" aria-label="Home">
+                <span class="logo-mark">✦</span>
+                <span>CREATIVE<span class="logo-muted">/PORTFOLIO</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="./documents/projects.html">Projects</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero-content">
+            <div class="eyebrow"><span></span> GET IN TOUCH • LET'S CONNECT <span></span></div>
+
+            <h1>SAY HELLO.<br><em>LET'S COLLABORATE.</em></h1>
+
+            <p>Have an idea, project inquiry, or just want to talk tech and AI? Reach out anytime.</p>
+        </section>
+
+        <div class="hero-bottom">
+            <a href="index.html">← HOME</a>
+            <span class="scroll-line"></span>
+            <span>✦ OPEN FOR WORK & PROJECTS</span>
+        </div>
+    </main>
+
+    <section class="contact-page-section">
+        <div class="section-inner">
+            <div class="section-label">01 — SEND A MESSAGE</div>
+
+            <div class="contact-page-grid">
+                <!-- Form Box -->
+                <div class="contact-form-card">
+                    <div class="card-header">
+                        <h2>Send a message</h2>
+                        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+                    </div>
+
+                    <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">YOUR NAME</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Ada Lovelace" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">EMAIL ADDRESS</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. ada@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">SUBJECT</label>
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="" disabled selected>Select a topic...</option>
+                                <option value="Project Collaboration">Project Collaboration</option>
+                                <option value="Internship / Work Opportunity">Internship / Work Opportunity</option>
+                                <option value="AI & Code Discussion">AI & Code Discussion</option>
+                                <option value="General Inquiry / Hello">General Inquiry / Just Saying Hello</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">MESSAGE</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project, idea, or question..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn light submit-btn" id="submitBtn">
+                            <span>SEND MESSAGE</span>
+                            <span class="arrow">↗</span>
+                        </button>
+
+                        <div id="formStatus" class="form-status" style="display: none;"></div>
+                    </form>
+                </div>
+
+                <!-- Info Side -->
+                <aside class="contact-side">
+                    <!-- Direct Email Card -->
+                    <div class="info-card">
+                        <span class="card-tag">DIRECT INBOX</span>
+                        <h3>Email Me</h3>
+                        <p class="email-display" id="emailText">carlablvsh@gmail.com</p>
+                        <div class="email-actions">
+                            <a href="mailto:carlablvsh@gmail.com" class="text-link">OPEN MAIL CLIENT <span>↗</span></a>
+                            <button type="button" class="copy-btn" onclick="copyEmail()">
+                                <span id="copyBtnText">COPY EMAIL</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Connect / Socials -->
+                    <div class="info-card">
+                        <span class="card-tag">NETWORKS</span>
+                        <h3>Find Me Online</h3>
+                        <div class="social-links-list">
+                            <a href="https://github.com/carlablvsh" target="_blank" rel="noopener" class="social-item">
+                                <span class="social-icon">✦</span>
+                                <span class="social-name">GitHub</span>
+                                <span class="social-arrow">↗</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/amaniiii" target="_blank" rel="noopener" class="social-item">
+                                <span class="social-icon">❖</span>
+                                <span class="social-name">LinkedIn</span>
+                                <span class="social-arrow">↗</span>
+                            </a>
+                            <a href="https://x.com/meowamani" target="_blank" rel="noopener" class="social-item">
+                                <span class="social-icon">✎</span>
+                                <span class="social-name">Twitter / X</span>
+                                <span class="social-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Details Card -->
+                    <div class="info-card details-card">
+                        <div class="meta-row">
+                            <span>LOCATION</span>
+                            <strong>Everywhere (Remote)</strong>
+                        </div>
+                        <div class="meta-row">
+                            <span>RESPONSE TIME</span>
+                            <strong>Within 24-48 Hours</strong>
+                        </div>
+                        <div class="meta-row">
+                            <span>STATUS</span>
+                            <strong class="status-active">● Available for Projects</strong>
+                        </div>
+
+                        <div class="skill-row contact-tags">
+                            <span>AI & ML</span>
+                            <span>WEB DEV</span>
+                            <span>PYTHON</span>
+                            <span>COLLABS</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 CREATIVE PORTFOLIO</span>
+        <span>MADE WITH CURIOSITY + TOO MUCH COFFEE</span>
+    </footer>
+
+    <script>
+        function copyEmail() {
+            const email = document.getElementById('emailText').innerText;
+            navigator.clipboard.writeText(email).then(() => {
+                const btnText = document.getElementById('copyBtnText');
+                const originalText = btnText.innerText;
+                btnText.innerText = 'COPIED! ✓';
+                setTimeout(() => {
+                    btnText.innerText = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Could not copy email: ', err);
+            });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const statusDiv = document.getElementById('formStatus');
+
+            // Open mailto as a fallback and show confirmation
+            const mailtoUri = `mailto:carla.blvsh@example.com?subject=${encodeURIComponent('[' + subject + '] from ' + name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
+            
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'form-status success';
+            statusDiv.innerHTML = `<strong>Thank you, ${name}!</strong> Opening your email client to send your message...`;
+            
+            setTimeout(() => {
+                window.location.href = mailtoUri;
+            }, 600);
+
+            form.reset();
+        }
+    </script>
+</body>
+</html>
